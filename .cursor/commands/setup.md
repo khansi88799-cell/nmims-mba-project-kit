@@ -1,0 +1,9 @@
+<!-- Generated from commands/setup.md by scripts/sync_agent_files.py. Edit the source, not this file. -->
+# Check and install the tools the kit needs (asks before each install)
+
+Set up this machine for the kit.
+
+1. Run `bash scripts/setup.sh --check` and show the results.
+2. For each missing tool, explain what it is for and ask the user before installing. Then run `bash scripts/setup.sh` (it asks for each install itself) or the single install command the user approves.
+3. Required: Node.js 18+, Python 3.10+, Google Chrome. Recommended: LibreOffice (deck to PDF and chart previews), Poppler (page images on any OS), Microsoft Word (Calibri font; Arial is used without it), GitHub CLI (to publish the repo).
+4. Run `python3 scripts/sync_agent_files.py` so every agent app sees the skills and commands.

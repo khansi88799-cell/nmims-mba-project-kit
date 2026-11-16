@@ -1,0 +1,31 @@
+{
+  "_comment": "SAMPLE ONLY: a fictional subscription business with made-up numbers. Copy to model.json and replace every value with the student's own assumptions; record the basis of each in assumption_notes.",
+  "currency_label": "INR lakh",
+  "years": ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"],
+  "streams": [
+    { "name": "Subscriptions", "volume": [200, 600, 1400, 2600, 4000], "price": 0.18, "variable_cost_pct": 0.25 },
+    { "name": "Setup fees", "volume": [40, 90, 160, 240, 300], "price": 0.5, "variable_cost_pct": 0.4 }
+  ],
+  "fixed_costs": [
+    { "name": "Team", "values": [60, 110, 180, 260, 330] },
+    { "name": "Marketing", "values": [15, 30, 50, 70, 90] },
+    { "name": "Rent and admin", "values": [10, 14, 18, 22, 26] }
+  ],
+  "capex": [20, 10, 15, 15, 20],
+  "depreciation_years": 5,
+  "working_capital_pct": 0.08,
+  "tax_rate": 0.25,
+  "equity_raised": [150, 100, 0, 0, 0],
+  "opening_cash": 0,
+  "scenarios": {
+    "Volume -30%": { "volume": 0.7 },
+    "Price -15%": { "price": 0.85 },
+    "Fixed costs +20%": { "fixed": 1.2 },
+    "Downside combined": { "volume": 0.75, "price": 0.9, "fixed": 1.15 }
+  },
+  "assumption_notes": {
+    "Subscriptions volume": "SAMPLE: survey intent rate x reachable market",
+    "Subscriptions price": "SAMPLE: competitor price check",
+    "Team": "SAMPLE: hiring plan in Chapter 8"
+  }
+}

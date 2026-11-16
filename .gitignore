@@ -1,0 +1,15 @@
+# Student work is never published
+projects/*
+!projects/README.md
+
+# Build artefacts and environments
+node_modules/
+.venv/
+.venv*/
+.build/
+__pycache__/
+*.pyc
+_qa/
+.DS_Store
+.env
+.env.*

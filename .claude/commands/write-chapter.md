@@ -1,0 +1,14 @@
+---
+description: Write or revise one chapter of a project report, against its rubric, in the student's voice
+argument-hint: <project folder> <chapter file or number>
+---
+<!-- Generated from commands/write-chapter.md by scripts/sync_agent_files.py. Edit the source, not this file. -->
+
+Write or revise a chapter: $ARGUMENTS
+
+1. Read the project's `OPEN_ITEMS.md`, `report/00_OUTLINE.md`, the chapter skeleton's rubric note, and `skills/nmims-mba-project/references/formats-and-rubrics.md`.
+2. Check the evidence: every number and claim needs a source saved in `research/sources/` (or the student's own data). Missing items become `[NEEDS: ...]` or `[VERIFY: ...]`. Ask the student for anything only they know.
+3. Write prose (not bullet walls), numbered and captioned tables and figures, APA citations, academic voice per `skills/humaniser/references/academic-mba.md`. First person only in method and reflection, and only from the student's real answers.
+4. Run `bash skills/nmims-mba-project/scripts/lint_report.sh projects/<project>/report` and fix flags in the chapter.
+5. Build a draft (`cd projects/<project>/tools && npm run build`) and look at the chapter's pages.
+6. Log what changed in `OPEN_ITEMS.md`.

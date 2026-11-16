@@ -1,0 +1,13 @@
+---
+description: Offer, draft or record the survey for a project (the student may skip it)
+mode: agent
+---
+<!-- Generated from commands/survey.md by scripts/sync_agent_files.py. Edit the source, not this file. -->
+
+Handle the survey for `projects/${input:args}`, following `skills/nmims-mba-project/references/survey.md`.
+
+1. Ask the student: do they want a short survey, do they already have one, or do they want to skip it? Explain in one line why it helps (Research projects need it).
+2. Yes: list the 3-4 report claims that need primary evidence, draft 10-16 questions with an ethics note, and save paste-ready text for Google Forms or Microsoft Forms to `research/survey/form.md`. Agree a target number of responses and a closing date. Ask them to put the CSV export in `research/survey/`.
+3. Already have one: ask for the form and the responses; save them in `research/survey/`.
+4. Skip: record "survey skipped by student on <date>" in `OPEN_ITEMS.md` and make sure no chapter depends on survey results. For a Research Project, warn that it needs primary data and ask once more.
+5. When responses arrive: summarise them (counts, percentages, n) for the findings or method chapter and Appendix A.

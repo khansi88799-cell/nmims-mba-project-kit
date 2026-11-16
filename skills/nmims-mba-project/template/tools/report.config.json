@@ -1,0 +1,23 @@
+{
+  "chapterDir": "../report",
+  "final": false,
+  "output": "../output/MBA_Project_Report.pdf",
+  "logo": "../assets/NMIMS_CDOE_logo_cover.png",
+  "cover": {
+    "title": "[NEEDS: registered project title, exactly as on the student portal]",
+    "format": "Problem-Solving Proposal",
+    "studentName": "[NEEDS: student name]",
+    "sapId": "[NEEDS: SAP ID]",
+    "specialisation": "[NEEDS: specialisation]",
+    "programme": "Master of Business Administration (Online)",
+    "footer": "Semester IV | [NEEDS: exam cycle, e.g. December 2026] Examination Cycle",
+    "facultyGuide": ""
+  },
+  "deck": { "fileName": "Presentation" },
+  "fonts": {
+    "regular": "/Applications/Microsoft Word.app/Contents/Resources/DFonts/Calibri.ttf",
+    "bold": "/Applications/Microsoft Word.app/Contents/Resources/DFonts/Calibrib.ttf",
+    "italic": "/Applications/Microsoft Word.app/Contents/Resources/DFonts/Calibrii.ttf",
+    "boldItalic": "/Applications/Microsoft Word.app/Contents/Resources/DFonts/Calibriz.ttf"
+  }
+}
