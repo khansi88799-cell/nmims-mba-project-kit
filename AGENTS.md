@@ -24,8 +24,9 @@ If your app does not load skills automatically, open the relevant `skills/<name>
 3. **One folder per project** in `projects/<student>-<topic>/`. Never copy text, data, numbers, figures or reflections between projects. `projects/` is git-ignored and must never be committed.
 4. **Never invent** sources, statistics, quotes, interviews, survey results, organisations' internal data or personal experiences. Unknowns become `[NEEDS: ...]` (only the student can supply) or `[VERIFY: ...]` (check a primary source).
 5. **Original and in the student's voice.** Write from the student's material, cite every source, run the humaniser (academic mode) and the originality check before any final build. Do not use tricks that hide copying (synonym spinning, hidden characters).
-6. **Final outputs are a PDF and a PPT,** built with the project's `tools/` (`npm run build`, `npm run deck`). The final PDF build refuses to run until placeholders are resolved and the originality report passes.
-7. **Tools:** if something is missing, run `/setup` (or `bash scripts/setup.sh`), which asks before installing anything.
+6. **Finish every check and report it honestly.** The originality check has two parts and both must be complete: the local check (sources + other projects) and the exact-phrase web check, where **every** phrase in `output/web_check.md` is searched and recorded, not a sample. Report exact numbers ("local 0.4%, PASS; web 14 of 14 phrases searched, 0 matches") and the date. Never say a check is done or passed while any part is unfinished; say what is left. Re-run both after any chapter edit.
+7. **Final outputs are a PDF and a PPT,** built with the project's `tools/` (`npm run build`, `npm run deck`). The final PDF build refuses to run until placeholders are resolved, the originality report passes and the web check is complete, all after the last chapter edit.
+8. **Tools:** if something is missing, run `/setup` (or `bash scripts/setup.sh`), which asks before installing anything.
 
 ## Repository map
 | Path | Contents |

@@ -32,7 +32,7 @@ Edit `tools/model.json` (start from `model.example.json`) with your assumptions 
 
 ## 5. Voice and originality
 - `/humanise <folder>`: academic, natural writing; measured before and after.
-- `/originality-check <folder>`: compares your report with your sources, with every other project in the kit (copy-case check) and with the web. Fix every finding (rewrite in your words, or quote and cite).
+- `/originality-check <folder>`: compares your report with your sources, with every other project in the kit (copy-case check) and with the web (every sampled phrase is searched as an exact phrase, not just a few). Fix every finding (rewrite in your words, or quote and cite). The agent reports the local % and "N of M phrases searched"; the final build waits until both are complete.
 
 ## 6. Build and review: `/build <folder>`
 Draft PDF in `output/`, deck in `presentation/` (fill `presentation/deck.json` from the report first). Read both fully.
@@ -48,6 +48,7 @@ Final checks, then the submission PDF `output/<Name>_<SAPID>_MBA_Project.pdf` an
 | Symptom | Fix |
 |---|---|
 | "Final build blocked: originality..." | Run `/originality-check` after your last edit |
+| "Final build blocked: web check not complete" | Search the phrases still unticked in `output/web_check.md`, then `sample_phrases.py --status` |
 | "Final build blocked: fill cover fields" | Complete `tools/report.config.json` |
 | Fonts look different / page count jumped | Calibri missing (Word not installed); Arial is used instead |
 | A diagram says "Unsupported markdown: list" | A Mermaid label starts with "1. "; write "Step 1:" |

@@ -111,6 +111,13 @@ function originalityGate() {
   const dir = rel(cfg.chapterDir);
   const newest = Math.max(...fs.readdirSync(dir).filter((f) => f.endsWith(".md")).map((f) => fs.statSync(path.join(dir, f)).mtimeMs));
   if (fs.statSync(rep).mtimeMs < newest) throw new Error("Final build blocked: chapters changed after the last originality check; run it again.");
+  // The exact-phrase web check must be finished too: every phrase searched, every match resolved
+  // (sample_phrases.py --status ../output/web_check.md writes this file).
+  const web = rel(cfg.webCheckReport || "../output/web_check.json");
+  if (!fs.existsSync(web)) throw new Error(`Final build blocked: finish the web check, then run sample_phrases.py --status (missing ${web}).`);
+  const w = JSON.parse(fs.readFileSync(web, "utf8"));
+  if (!w.complete) throw new Error(`Final build blocked: web check not complete (${w.searched} of ${w.total} phrases searched, ${(w.unresolved || []).length} match(es) unresolved).`);
+  if (fs.statSync(web).mtimeMs < newest) throw new Error("Final build blocked: chapters changed after the last web check; refresh the checklist, search any new phrases and run --status again.");
 }
 
 function bodyHtml(pageNums = null) {

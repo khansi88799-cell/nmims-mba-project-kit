@@ -2,7 +2,7 @@
 name: nmims-mba-project
 description: End-to-end method for an NMIMS CDOE online MBA Semester IV project (6 credits) - Problem-Solving Proposal, Business Plan or Research Project - delivered as a submission-ready PDF and a viva PowerPoint deck. Runs a structured intake (project name and type, Semester III pre-work from the portal, work already done, the idea in the student's own words, format-specific questions, survey offer, cover details), creates a separate project folder per student, writes chapters mapped to each marking rubric with verified evidence and APA citations, builds a reproducible financial model, keeps the writing in the student's voice, checks originality (plagiarism and copy cases), and builds the PDF with the official NMIMS cover, contents and Page X of Y. Use for any NMIMS (or similar Indian university) MBA project, dissertation, business plan or capstone report.
 metadata:
-  version: 2.0.0
+  version: 2.1.0
   updated: 2026-11-17
 ---
 
@@ -26,10 +26,10 @@ Each student's project lives in `<kit>/projects/<student>-<topic>/` (git-ignored
 6. **Numbers**: copy `tools/model.example.json` to `tools/model.json`, replace every value with the student's assumptions and their basis, `npm run model`, include the generated tables.
 7. **Write** chapters in `report/` following each skeleton's rubric note: analysis chapters first, reflection from the student's answers (`references/reflection-questions.md`), summary or abstract last. Prose, not bullet walls; tables and figures numbered, captioned and discussed.
 8. **Voice**: `humaniser` skill in academic mode, then `bash <skill>/scripts/lint_report.sh <project>/report` (AI vocabulary < 3/1k words, sentence-length CV 0.45-0.80, no em dashes, no hidden characters). Never invent experiences to add voice.
-9. **Originality**: run the `originality-check` skill (local sources + all other projects + web phrase check) and fix every finding until it passes.
+9. **Originality**: run the `originality-check` skill (local sources + all other projects + web phrase check) and fix every finding until it passes. Search every phrase in the web checklist, not a sample, and confirm with `sample_phrases.py --status`. Report "N of M phrases searched" to the student; never call the check done while it is partial.
 10. **Build and inspect**: `npm run build`; look at the rendered pages (`references/build-and-tools.md`); 30-60 pages; `python3 <skill>/scripts/check_citations.py <project>/report --doi`.
 11. **Deck**: copy `presentation/deck.example.json` to `presentation/deck.json`, fill it from the final report (`references/deck-format.md`), `npm run deck`, preview (`npm run deck:pdf` with LibreOffice, or `deck:qa`), look at every slide.
-12. **Final**: resolve all `[VERIFY]` and `[NEEDS]`; set `"final": true`; `npm run build` (blocked unless placeholders are gone and the originality report passes and is newer than the chapters). Deliver `output/<Name>_<SAPID>_MBA_Project.pdf` and the `.pptx` (plus its PDF). Ask the student to read everything before submitting.
+12. **Final**: resolve all `[VERIFY]` and `[NEEDS]`; set `"final": true`; `npm run build` (blocked unless placeholders are gone, the originality report passes, and the web check is complete, with both reports newer than the chapters). Deliver `output/<Name>_<SAPID>_MBA_Project.pdf` and the `.pptx` (plus its PDF). Ask the student to read everything before submitting.
 
 Ask the student whenever a decision is theirs. Keep `OPEN_ITEMS.md` current: answers, decisions, progress, survey status, originality results.
 
